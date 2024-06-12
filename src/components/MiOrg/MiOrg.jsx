@@ -2,20 +2,13 @@
 import './MiOrg.css'
 import { useState } from 'react';
 
-function MiOrg(params) {
+function MiOrg(props) {
 
     // estado - hooks
     // useState
-
-    const [click, setClick] = useState(true);
-
-    const manejarClick = () => {
-        setClick(!click)
-    }
-
     return <section className="orgSection">
         <h3 className='title'>Mi organizacion</h3>
-        <img src="/add.png" alt="boton add" onClick={manejarClick} />
+        <img src="/add.png" alt="boton add" onClick={props.manejarClick} />
     </section>
 }
 
