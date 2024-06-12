@@ -1,8 +1,8 @@
 
 import './Formulario.css'
-import CampoTexto from '../campoTexto/CampoTexto'
-import ListaOpciones from '../listaOpciones/ListaOpciones'
-import Boton from '../boton/Boton'
+import CampoTexto from '../CampoTexto/CampoTexto'
+import ListaOpciones from '../ListaOpciones/ListaOpciones'
+import Boton from '../Boton/Boton'
 
 function Formulario() {
 
@@ -14,9 +14,9 @@ function Formulario() {
         <section className='formulario'>
             <form onSubmit={manejarEnvio}>
                 <h2>Rellena el formulario para crear el colaborador </h2>
-                <CampoTexto titulo="nombre" placeholder="Ingresa su nombre"></CampoTexto>
-                <CampoTexto titulo="puesto" placeholder= "Ingresa tu puesto"></CampoTexto>
-                <CampoTexto titulo="foto" placeholder="Ingresa su foto"></CampoTexto>
+                <CampoTexto titulo="nombre" placeholder="Ingresa su nombre" required></CampoTexto>
+                <CampoTexto titulo="puesto" placeholder= "Ingresa tu puesto" required></CampoTexto>
+                <CampoTexto titulo="foto" placeholder="Ingresa su foto"  required></CampoTexto>
                 <ListaOpciones></ListaOpciones>
                 <Boton texto="Crear"></Boton>
             </form>

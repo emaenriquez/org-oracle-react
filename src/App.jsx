@@ -1,6 +1,7 @@
 
-import Header from './components/header/Header'
-import Formulario from './components/formulario/Formulario'
+import Header from './components/Header/Header'
+import Formulario from './components/Formulario/Formulario'
+import MiOrg from './components/MiOrg/MiOrg'
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <>
       <Header></Header>
       <Formulario></Formulario>
+      <MiOrg></MiOrg>
     </>
   )
 }
