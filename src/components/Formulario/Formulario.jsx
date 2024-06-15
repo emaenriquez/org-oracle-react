@@ -5,7 +5,7 @@ import CampoTexto from '../CampoTexto/CampoTexto'
 import ListaOpciones from '../ListaOpciones/ListaOpciones'
 import Boton from '../Boton/Boton'
 
-function Formulario() {
+function Formulario(props) {
 
     const [nombre, setNombre] = useState('')
     const [puesto, setPuesto] = useState('')
@@ -49,7 +49,11 @@ function Formulario() {
                     valor={foto} 
                     actualizarValor={setFoto}
                 ></CampoTexto>
-                <ListaOpciones valor={equipo} actualizarEquipo={setEquipo}></ListaOpciones>
+                <ListaOpciones 
+                    valor={equipo} 
+                    actualizarEquipo={setEquipo}
+                    equipos={props.equipos}
+                ></ListaOpciones>
                 <Boton texto="Crear"></Boton>
             </form>
         </section>
