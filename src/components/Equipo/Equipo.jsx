@@ -1,4 +1,5 @@
 
+import Colaborador from '../Colaborador/Colaborador'
 import './Equipo.css'
 
 function Equipo(props) {
@@ -15,7 +16,9 @@ function Equipo(props) {
 
     return <section className="equipo" style={obj}>
         <h3 style={estiloTitulo}>{titulo}</h3>
-        <div className="colaboradores"></div>
+        <div className="colaboradores">
+            <Colaborador></Colaborador>
+        </div>
     </section>
 }
 
