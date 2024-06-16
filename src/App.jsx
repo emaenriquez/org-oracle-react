@@ -3,13 +3,12 @@ import Header from './components/Header/Header'
 import Formulario from './components/Formulario/Formulario'
 import MiOrg from './components/MiOrg/MiOrg'
 import Equipo from './components/Equipo/Equipo'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
   const [mostrarFormulario, setMostrarFormulario] = useState(true);
-
-
-
+  const [colaboradores,setColaboradores] = useState([])
 
   const manejarClick = () => {
     setMostrarFormulario(!mostrarFormulario);
@@ -55,18 +54,35 @@ function App() {
     },
   ]
 
+  // registrar colaborador
+
+  const registrarColaborador = (colaborador) => {
+    console.log('nuevo colaborador',colaborador)
+    setColaboradores([...colaboradores, colaborador])
+  }
+
   return (
     <>
       <Header></Header>
       {/* {mostrarFormulario ? <Formulario></Formulario> : <></> } */}
-      {mostrarFormulario && <Formulario equipos={equipos.map((equipo)=> equipo.titulo)}></Formulario>}
-      {/* <Formulario></Formulario> */}
+      {
+        mostrarFormulario && 
+        <Formulario 
+          equipos={equipos.map((equipo)=> equipo.titulo)}
+          registrarColaborador={registrarColaborador}
+        ></Formulario>
+      }
       <MiOrg manejarClick={manejarClick}></MiOrg>
       {
         equipos.map( (equipo,index) => {
-          return <Equipo datos= {equipo} key={equipo.titulo}></Equipo>
+          return <Equipo 
+            datos= {equipo} 
+            key={equipo.titulo}
+            colaboradores= {colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
+          ></Equipo>
         } )
       }
+      <Footer></Footer>
     </>
   )
 }
